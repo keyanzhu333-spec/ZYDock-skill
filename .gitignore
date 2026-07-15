@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Credentials — NEVER commit API keys
+credentials
+*.key
+.env
+
+# Docking / analysis outputs (generated at runtime)
+results/
+screen/
+demo_*/
+*.pse
+raw_response.json
+confidence_scores.txt
+
+# OS
+.DS_Store
+Thumbs.db
