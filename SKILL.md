@@ -1,9 +1,6 @@
 ---
-name: ZYDock
-description: Cloud-based molecular docking via NVIDIA NIM DiffDock API. Predict protein-ligand binding poses from PDB/SMILES with confidence scores and virtual screening — runs entirely on NVIDIA's hosted GPUs, NO local GPU or DiffDock install needed. Requires an NVIDIA API key. Use when the user wants to dock ligands, predict binding poses, run virtual screening, or find binding sites without local compute. Not for binding affinity prediction.
-license: MIT
-metadata:
-    skill-author: zy
+name: zydock
+description: Cloud-based molecular docking with ZYDock via NVIDIA NIM DiffDock API. Predict protein-ligand binding poses from PDB/SMILES with confidence scores and virtual screening; runs on NVIDIA hosted GPUs with no local GPU or DiffDock install needed. Requires an NVIDIA API key. Use when the user wants to dock ligands, predict binding poses, run virtual screening, find binding sites without local compute, or explicitly asks for ZYDock. Not for binding affinity prediction.
 ---
 
 # DiffDock_ZY: 云端分子对接（NVIDIA API 版）
@@ -250,9 +247,15 @@ python scripts/generate_report.py --run_dir results/demo --gene EGFR --accession
 ```
 
 **report/ 输出：**
-- `report_CN.md` —— 中文报告（材料与方法 + 结果，含表格、图示引用）
-- `report_EN.md` —— 英文报告（Materials and Methods + Results）
+- `report_CN.md` —— 中文报告（材料与方法 + 结果 + 讨论 + 参考文献）
+- `report_EN.md` —— 英文报告（Materials and Methods + Results + Discussion + References）
 - `interactions_summary.csv` —— 相互作用汇总表（机器可读）
+
+**报告包含的深度分析：**
+- **材料与方法**：受体来源/分辨率、配体处理、DiffDock 盲对接原理与参数、PLIP + PyMOL 流程，含文献引用 [1–3]
+- **结果**：置信度分布定量分析（各等级构象数、均值、跨度、top 构象一致性判断）、相互作用类型计数与主导作用力、**结合热点残基分析**（多接触残基自动识别）、相互作用表、图示
+- **讨论**：置信度分级解读、主导相互作用的生物物理意义、优化着力点、局限性与后续实验建议（MD 精修 / MM-GBSA 重打分 / SPR·ITC 验证）
+- **参考文献**：DiffDock、PLIP、PyMOL、PDB、UniProt、AlphaFold（国际通行著录格式）
 
 ## 置信度分数解读 Confidence Interpretation
 
