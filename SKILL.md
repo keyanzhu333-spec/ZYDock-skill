@@ -1,9 +1,6 @@
 ---
-name: ZYDock
-description: Cloud-based molecular docking via NVIDIA NIM DiffDock API. Predict protein-ligand binding poses from PDB/SMILES with confidence scores and virtual screening — runs entirely on NVIDIA's hosted GPUs, NO local GPU or DiffDock install needed. Requires an NVIDIA API key. Use when the user wants to dock ligands, predict binding poses, run virtual screening, or find binding sites without local compute. Not for binding affinity prediction.
-license: MIT
-metadata:
-    skill-author: zy
+name: zydock
+description: Cloud-based molecular docking with ZYDock via NVIDIA NIM DiffDock API. Predict protein-ligand binding poses from PDB/SMILES with confidence scores and virtual screening; runs on NVIDIA hosted GPUs with no local GPU or DiffDock install needed. Requires an NVIDIA API key. Use when the user wants to dock ligands, predict binding poses, run virtual screening, find binding sites without local compute, or explicitly asks for ZYDock. Not for binding affinity prediction.
 ---
 
 # DiffDock_ZY: 云端分子对接（NVIDIA API 版）

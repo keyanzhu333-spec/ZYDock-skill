@@ -1,8 +1,8 @@
 # ZYDock
 
-**Cloud-based molecular docking + interaction analysis, all from a gene name and a SMILES string.**
+**Cloud-based molecular docking + interaction analysis for Codex, all from a gene name and a SMILES string.**
 
-ZYDock is a [Claude Code](https://docs.claude.com/en/docs/claude-code) skill that runs the full structure-based drug discovery pipeline — no local GPU, no DiffDock installation required. All docking computation runs on NVIDIA's hosted GPUs via the [NVIDIA NIM DiffDock API](https://build.nvidia.com/mit/diffdock).
+ZYDock is a Codex skill that runs the full structure-based drug discovery pipeline. No local GPU or DiffDock installation is required. All docking computation runs on NVIDIA's hosted GPUs via the [NVIDIA NIM DiffDock API](https://build.nvidia.com/mit/diffdock).
 
 ## What it does
 
@@ -22,6 +22,7 @@ Bilingual (EN/CN) SCI-grade analysis report
 
 ## Key features
 
+- **Codex-ready** — includes `SKILL.md` and `agents/openai.yaml` so Codex can discover and invoke the skill
 - **No local compute** — docking runs on NVIDIA's hosted GPUs; you only need an API key
 - **Auto structure retrieval** — give a gene/protein name; it searches UniProt and picks the best experimentally-solved structure (highest resolution), falling back to AlphaFold if none exists (defaults to human, configurable species)
 - **Automatic receptor cleaning** — strips crystallographic waters, ions, buffer additives and co-crystallized ligands before docking
