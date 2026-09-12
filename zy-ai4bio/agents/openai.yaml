@@ -1,0 +1,7 @@
+interface:
+  display_name: "ZY-AI4bio"
+  short_description: "AI4Bio workflow router"
+  default_prompt: "Use $zy-ai4bio to choose and run the right biology skill workflow."
+
+policy:
+  allow_implicit_invocation: true
