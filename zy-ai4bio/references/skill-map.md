@@ -7,6 +7,7 @@ Use this map to choose the right installed child skill. Prefer the narrowest ski
 | Need | Use skill | Notes |
 |---|---|---|
 | Protein-small molecule docking, blind binding pose prediction, DiffDock via NVIDIA NIM | `diffdock` | Requires NVIDIA API key. Outputs docking poses, confidence, PLIP interactions, PyMOL images, and bilingual reports. |
+| Large ligand-library virtual screening with local UniDock-Pro, receptor PDBQT, ligand PDBQT directory or index, top-hit ranking | `unidock-vscreen` | Use for GPU batch screening and hit prioritization. Requires local `/home/keyanzhu/UniDock-Pro/build/udp` or a user-provided UniDock-Pro binary. |
 | Prepared receptor-ligand docking with GNINA/GVINA-style workflow, CNN rescoring, pose ranking, PyMOL images, PLIP reports | `gnina-dock` | Use when receptor/ligand structures and a binding box or reference ligand are available. Keeps GNINA scores, CNNscore, and CNNaffinity separate. |
 | Protein-protein docking, PPI complex prediction, receptor.pdb plus ligand.pdb | `lightdock` | Local LightDock workflow; CPU-based and can take time. |
 | Protein-ligand MD, ligand parameterization, GROMACS workflow, trajectory analysis, MM/PBSA | `gromacs-md` | Use after docking when the user wants stability, dynamics, or binding free-energy post-processing. |

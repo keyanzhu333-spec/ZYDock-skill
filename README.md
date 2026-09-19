@@ -20,6 +20,16 @@ Interactions + two 300-DPI PyMOL figures
 Bilingual (EN/CN) SCI-grade analysis report
 ```
 
+## ZY-AI4Bio extension
+
+The repository also includes the `zy-ai4bio` workflow router for combining docking,
+UniDock-Pro virtual screening, GNINA/PLIP analysis, molecular dynamics, structure
+and sequence viewers, public life-science databases, and literature workflows.
+
+- [ZY-AI4Bio public-account article](docs/zy-ai4bio-public-account.md)
+- [Virtual-screening library status](docs/virtual-screening-library.md)
+- [ZY-AI4Bio skill](zy-ai4bio/SKILL.md)
+
 ## Key features
 
 - **Codex-ready** — includes `SKILL.md` and `agents/openai.yaml` so Codex can discover and invoke the skill

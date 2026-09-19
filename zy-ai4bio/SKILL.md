@@ -1,6 +1,6 @@
 ---
 name: zy-ai4bio
-description: AI-for-biology workflow router that coordinates installed Codex skills for molecular docking, GNINA/GVINA-style CNN rescoring, molecular dynamics, antibody structure prediction, protein and sequence visualization, life-science databases, and biomedical literature. Use when the user asks for a broad bioinformatics, computational biology, structural biology, drug discovery, docking-to-MD, antibody modeling, database/literature lookup, or multi-step AI4Bio workflow and wants Codex to choose the right skill(s).
+description: AI-for-biology workflow router that coordinates installed Codex skills for molecular docking, UniDock-Pro virtual screening, GNINA/GVINA-style CNN rescoring, molecular dynamics, antibody structure prediction, protein and sequence visualization, life-science databases, and biomedical literature. Use when the user asks for a broad bioinformatics, computational biology, structural biology, drug discovery, virtual screening, docking-to-MD, antibody modeling, database/literature lookup, or multi-step AI4Bio workflow and wants Codex to choose the right skill(s).
 ---
 
 # ZY-AI4bio
@@ -12,6 +12,7 @@ Use this as the top-level coordinator for biology and drug-discovery tasks. Rout
 Read `references/skill-map.md` when the task is broad, ambiguous, or involves more than one biology workflow.
 
 - For protein-small molecule blind docking with NVIDIA DiffDock API, use `diffdock`.
+- For large ligand-library virtual screening with local UniDock-Pro, use `unidock-vscreen`.
 - For prepared receptor-ligand docking with GNINA CNN rescoring, PyMOL visualization, and PLIP interaction analysis, use `gnina-dock`.
 - For protein-protein docking, use `lightdock`.
 - For docking follow-up MD, trajectory analysis, or MM/PBSA, use `gromacs-md`.
@@ -32,7 +33,7 @@ Read `references/skill-map.md` when the task is broad, ambiguous, or involves mo
 
 ## Common Chains
 
-- Target plus compound: `life-sciences-databases:uniprot-skill` or `life-sciences-databases:pubchem-pug-skill` for identifiers, then `diffdock` for blind DiffDock docking or `gnina-dock` when prepared structures and a binding box/reference ligand are available, then `gromacs-md` for MD if requested.
+- Target plus compound: `life-sciences-databases:uniprot-skill` or `life-sciences-databases:pubchem-pug-skill` for identifiers, then `diffdock` for blind DiffDock docking, `unidock-vscreen` for large prepared PDBQT libraries, or `gnina-dock` when prepared structures and a binding box/reference ligand are available, then `gromacs-md` for MD if requested.
 - Protein-protein mechanism: database lookup, structure retrieval via `life-sciences-databases:rcsb-pdb-skill` or local files, then `lightdock`.
 - Antibody workflow: `igfold` for VH/VL modeling, `structure-viewer:structure-viewer` for inspection, then a docking skill if the user asks for interaction modeling.
 - Evidence workflow: database skills for structured facts, literature skills for papers, `literature-skill` for RSS monitoring or daily alerts, then summarize evidence levels and limitations without overclaiming.
